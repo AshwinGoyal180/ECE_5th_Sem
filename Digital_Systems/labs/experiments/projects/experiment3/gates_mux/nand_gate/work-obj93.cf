@@ -1,0 +1,9 @@
+v 4
+file . "testbench/nand_tb.vhdl" "d42b84e7cb6550d844f7a9f6d05b48c3ed84f3bf" "20200823094727.326":
+  entity nand_tb at 1( 0) + 0 on 15;
+  architecture tb of nand_tb at 7( 75) + 0 on 16;
+file . "src/nand_gate.vhdl" "0862e4edef059c653dc9240fd097b27f2fdd68d9" "20200823094727.289":
+  entity nandgate at 1( 0) + 0 on 11;
+  architecture sms of nandgate at 12( 143) + 0 on 12;
+  entity mux at 27( 427) + 0 on 13;
+  architecture nandgate_arch of mux at 38( 580) + 0 on 14;

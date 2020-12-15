@@ -1,0 +1,10 @@
+v 4
+file . "testbench/half_tb.vhdl" "e300a9b1ed85efbc2d2461bf9f269a03302994a8" "20200808141036.523":
+  entity half_tb at 2( 1) + 0 on 47;
+  architecture half_sub of half_tb at 8( 77) + 0 on 48;
+file . "src/half_adder.vhdl" "5b5e09a1a79889b4276d9ecc902f423dbfdbb85b" "20200808091153.639":
+  entity half_adder at 1( 0) + 0 on 41;
+  architecture half_adder of half_adder at 12( 195) + 0 on 42;
+file . "src/half_subtractor.vhdl" "2bcb2210f735ebaa2239cf620b8eb6f13992a865" "20200808141036.492":
+  entity half_subtractor at 1( 0) + 0 on 45;
+  architecture half_sub of half_subtractor at 12( 200) + 0 on 46;

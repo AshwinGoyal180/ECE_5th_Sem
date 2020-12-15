@@ -1,0 +1,124 @@
+$date
+  Sat Aug  8 21:01:29 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module sub_tb $end
+$var reg 3 ! input[2:0] $end
+$var reg 2 " output[1:0] $end
+$scope module uut $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % bi $end
+$var reg 1 & d $end
+$var reg 1 ' bo $end
+$var reg 1 ( w_wire_1 $end
+$var reg 1 ) w_wire_2 $end
+$var reg 1 * w_wire_3 $end
+$var reg 1 + w_wire_4 $end
+$var reg 1 , w_wire_5 $end
+$var reg 1 - w_wire_6 $end
+$var reg 1 . w_wire_7 $end
+$var reg 1 / w_wire_8 $end
+$var reg 1 0 w_wire_9 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b000 !
+b00 "
+0#
+0$
+0%
+0&
+0'
+1(
+0)
+0*
+1+
+0,
+1-
+0.
+0/
+10
+#10000000
+b001 !
+b11 "
+1%
+1&
+1'
+0-
+1.
+00
+#20000000
+b010 !
+b11 "
+1$
+0%
+1&
+0(
+1)
+0+
+1,
+0-
+0.
+1/
+00
+#30000000
+b011 !
+b10 "
+1%
+0&
+0/
+10
+#40000000
+b100 !
+b01 "
+1#
+0$
+0%
+1&
+0'
+0)
+1*
+1/
+00
+#50000000
+b101 !
+b00 "
+1%
+0&
+0/
+10
+#60000000
+b110 !
+b00 "
+1$
+0%
+0&
+0'
+0*
+1+
+0,
+1-
+0.
+0/
+10
+#70000000
+b111 !
+b11 "
+1%
+1&
+1'
+0-
+1.
+00
+#80000000

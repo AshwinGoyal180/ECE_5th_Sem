@@ -1,0 +1,7 @@
+v 4
+file . "testbench/half_tb.vhdl" "5ca5331de35288080876b864edb608e2dc887677" "20200808152609.719":
+  entity half_tb at 2( 1) + 0 on 55;
+  architecture half_adder of half_tb at 8( 77) + 0 on 56;
+file . "src/half_adder.vhdl" "2b59c4d19eaa943b09eff6ec320d8908eff4b1c6" "20200808152609.699":
+  entity half_adder at 1( 0) + 0 on 53;
+  architecture half_adder of half_adder at 12( 195) + 0 on 54;

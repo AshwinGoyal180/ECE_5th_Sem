@@ -1,0 +1,9 @@
+v 4
+file . "testbench/nor_tb.vhdl" "41e5ebf1447e8f41e591e67d2be620c2b3332b8d" "20200823095250.653":
+  entity nor_tb at 1( 0) + 0 on 27;
+  architecture tb of nor_tb at 7( 74) + 0 on 28;
+file . "src/nor_gate.vhdl" "acc8c2837a0a0c639bd11c4a89d814ccd1810987" "20200823095250.616":
+  entity norgate at 1( 0) + 0 on 23;
+  architecture sms of norgate at 12( 141) + 0 on 24;
+  entity mux at 27( 424) + 0 on 25;
+  architecture norgate_arch of mux at 38( 577) + 0 on 26;

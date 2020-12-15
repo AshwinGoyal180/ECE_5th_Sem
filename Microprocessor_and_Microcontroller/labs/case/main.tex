@@ -1,0 +1,48 @@
+\documentclass[12pt, twocolumn]{article}
+\usepackage{lmodern}
+
+\input{head.tex}
+\input{glossary.tex}
+
+\usepackage{easylist}
+\usepackage{hanging}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{tipa}
+\usepackage[left=2.5cm, top=2cm, bottom=2cm, right=2cm]{geometry}
+
+\begin{document}
+
+\input{cover.tex}
+\pagenumbering{Roman}
+
+\input{content.tex}
+
+
+\twocolumn[
+
+\begin{@twocolumnfalse}
+\pagenumbering{arabic}
+\begin{abstract}
+	Semiconductors and microprocessors are essential to modern technology;
+	their absence would halt every aspect of modern life. Advances and improvements
+	in the semiconductor industry have fueled the technological revolution of the
+	1990s. The decrease in the cost and size of transistors allowed for an every
+	increasing amount of transistors to be put onto a silicon chip, thereby allowing
+	for faster processors.
+	The ability to fit more transistors on a silicon wafer approximately follows
+	Moore’s Law, which is named after Gordon Moore, co-founder of Intel Corporation.
+	Moore’s Law states that the number of transistors on a silicon chip doubles every 18-24 months.
+\end{abstract}
+\end{@twocolumnfalse}
+]
+\input{file.tex}
+
+
+% \nocite{*}
+% % %Bibliogra*phy
+%  \addcontentsline{toc}{section}{Bibliography}
+%  \bibliographystyle{apalike}
+%  \bibliography{bibliography}
+
+\end{document}

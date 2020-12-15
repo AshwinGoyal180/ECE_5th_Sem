@@ -1,0 +1,10 @@
+v 4
+file . "src/traffic_light.vhdl" "f21452dafa20cd36304c96561eeb7927d7e5049e" "20201122175231.475":
+  entity traffic at 2( 29) + 0 on 39;
+  architecture traffica of traffic at 15( 329) + 0 on 40;
+file . "src/traffic2.vhdl" "0263e5fa8cc8dc436b0eba6c7a75398f6c591677" "20201122172812.527":
+  entity controller at 1( 0) + 0 on 11;
+  architecture arch of controller at 19( 503) + 0 on 12;
+file . "testbench/controller_tb.vhdl" "bcbb1b69dcdf42a91194252efdbc8a07ef103add" "20201122175231.533":
+  entity controller_tb at 5( 140) + 0 on 41;
+  architecture behavior of controller_tb at 11( 228) + 0 on 42;

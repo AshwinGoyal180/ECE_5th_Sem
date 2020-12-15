@@ -1,0 +1,9 @@
+v 4
+file . "testbench/xor_tb.vhdl" "d04e3b201ad64d044ba1c688bc5291f8ab2b9aad" "20200823095647.038":
+  entity xor_tb at 1( 0) + 0 on 15;
+  architecture tb of xor_tb at 7( 74) + 0 on 16;
+file . "src/xor_gate.vhdl" "63bb4844cbb512391e1ceef36a0f9a3303d58bce" "20200823095647.009":
+  entity xorgate at 1( 0) + 0 on 11;
+  architecture sms of xorgate at 12( 141) + 0 on 12;
+  entity mux at 27( 422) + 0 on 13;
+  architecture xorgate_arch of mux at 38( 575) + 0 on 14;

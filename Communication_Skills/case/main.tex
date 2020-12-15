@@ -1,0 +1,52 @@
+\documentclass[12pt, twocolumn]{article}
+\usepackage{lmodern}
+
+\input{head.tex}
+\input{glossary.tex}
+
+\usepackage{easylist}
+\usepackage{hanging}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{tipa}
+\usepackage[left=2cm, top=2cm, bottom=2cm, right=1cm]{geometry}
+
+\begin{document}
+
+\input{cover.tex}
+\pagenumbering{Roman}
+
+\input{content.tex}
+
+\twocolumn[
+
+\begin{@twocolumnfalse}
+\begin{abstract}
+	Effective communication has been the backbone of strong relationships,
+be it political, corporate or any other field. It is the first step in
+forging ways that lead to trustworthy client relationships. Its
+importance has been amplified by the current scenario. The corporate
+world is on the precipice of change in the way it handles and manages
+situations and also what they stand for. Therefore, effective
+communication skills are becoming a must, more than they are already.
+
+Focussing on a few of these skills viz. pronunciation, phonemic
+awareness and fine motor skills, it is intended to identify the
+different aspects of it, along with the concerns and problems that
+people face in these areas. Also, ways to overcome these problems are
+examined in order to be a better communicator.
+\end{abstract}
+
+\end{@twocolumnfalse}
+]
+\pagenumbering{arabic}
+\input{body.tex}
+
+
+% \nocite{*}
+% % %Bibliogra*phy
+%  \addcontentsline{toc}{section}{Bibliography}
+%  \bibliographystyle{apalike}
+%  \bibliography{bibliography}
+
+\end{document}

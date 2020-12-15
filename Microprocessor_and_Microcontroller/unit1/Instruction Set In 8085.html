@@ -1,0 +1,1025 @@
+
+
+  <div class="container" style="--line-height:1.6em;" dir="ltr">
+    <div class="header reader-header reader-show-element">
+
+      <div class="domain-border"></div>
+      <h1 class="reader-title">Instruction Set In 8085</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+<li>Control</li>
+<li>Logical</li>
+<li>Branching</li>
+<li>Arithmetic</li>
+<li>Data Transfer</li>
+</ol>
+<h3>Control Instructions</h3><hr>
+<table>
+<tbody>
+<tr>
+<td><strong>&nbsp;Opcode</strong></td>
+<td><strong>&nbsp;Operand</strong></td>
+<td><strong>Explanation of Instruction<br></strong></td>
+<td><strong>&nbsp;Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;<strong>NOP </strong></td>
+<td><strong>none</strong></td>
+<td>No operation</td>
+<td>No operation is performed. The instruction is fetched and decoded. However no operation is executed.
+<p><code>Example: NOP</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>HLT</strong></td>
+<td><strong>none</strong></td>
+<td>Halt and enter wait state</td>
+<td>The CPU finishes executing the current instruction and halts any
+further execution. An interrupt or reset is necessary to exit from the
+halt state.
+<p><code>Example: HLT</code></p><code>
+</code></td>
+</tr>
+<tr>
+<td><strong>&nbsp;DI</strong></td>
+<td><strong>none</strong></td>
+<td>Disable interrupts</td>
+<td>
+<p>The interrupt enable flip-flop is reset and all the interrupts except the TRAP are disabled. No flags are affected.</p>
+<p><code>Example: DI</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>EI</strong></td>
+<td><strong>none</strong></td>
+<td>Enable interrupts</td>
+<td>
+<p>The interrupt enable flip-flop is set and all interrupts are enabled.
+ No flags are affected. After a system reset or the acknowledgement of
+an interrupt, the interrupt enable flipflop is reset, thus disabling the
+ interrupts. This instruction is<br>necessary to reenable the interrupts (except TRAP).</p>
+<p><code>Example: EI<br></code></p><code>
+</code></td>
+</tr>
+<tr>
+<td><strong>&nbsp;RIM</strong></td>
+<td><strong>none</strong></td>
+<td>Read interrupt mas</td>
+<td>
+<p>This is a multipurpose instruction used to read the status of
+interrupts 7.5, 6.5, 5.5 and read serial data input bit. The instruction
+ loads eight bits in the accumulator with the following interpretations.</p>
+<p><code>Example: RIM</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>SIM</strong></td>
+<td><strong>none</strong></td>
+<td>Set interrupt mask</td>
+<td>
+<p>This is a multipurpose instruction and used to implement the 8085
+interrupts 7.5, 6.5, 5.5, and serial data output. The instruction
+interprets the accumulator contents as follows.</p>
+<p><code>Example: SIM</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>LOGICAL INSTRUCTIONS</h3><hr>
+<table>
+<tbody>
+<tr>
+<td><strong>&nbsp;Opcode</strong></td>
+<td><strong>&nbsp;Operand</strong></td>
+<td><strong>Explanation of Instruction<br></strong></td>
+<td><strong>&nbsp;Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;<strong>CMP </strong></td>
+<td>
+<p><strong>R</strong></p>
+<p><strong>M</strong></p>
+</td>
+<td>Compare register or memory with accumulator</td>
+<td>
+<p>The contents of the operand (register or memory) are M compared with
+the contents of the accumulator. Both contents are preserved . The
+result of the comparison is shown by setting the flags of the PSW as
+follows:</p>
+<p>if (A) &lt; (reg/mem): carry flag is set<br>if (A) = (reg/mem): zero flag is set<br>if (A) &gt; (reg/mem): carry and zero flags are reset</p>
+<p><code>Example: CMP B or CMP M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>CPI</strong></td>
+<td><strong>8-bit data</strong></td>
+<td>Compare immediate with accumulator</td>
+<td>
+<p>The second byte (8-bit data) is compared with the contents of the
+accumulator. The values being compared remain unchanged. The result of
+the comparison is shown by setting the flags of the PSW as follows:</p>
+<p>if (A) &lt; data: carry flag is set<br>if (A) = data: zero flag is set<br>if (A) &gt; data: carry and zero flags are reset</p>
+<p><code>Example: CPI 89H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;ANA</strong></td>
+<td><strong></strong>
+<p><strong>R</strong></p>
+<p><strong>M</strong></p>
+</td>
+<td>Logical AND register or memory with accumulator</td>
+<td>
+<p>The contents of the accumulator are logically ANDed with M the
+contents of the operand (register or memory), and the result is placed
+in the accumulator. If the operand is a memory location, its address is
+specified by the contents of HL registers. S, Z, P are modified to
+reflect the result of the operation. CY is reset. AC is set.</p>
+<p><code>Example: ANA B or ANA M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;ANI</strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Logical AND immediate with accumulator</td>
+<td>
+<p>The contents of the accumulator are logically ANDed with the<br>8-bit data (operand) and the result is placed in the<br>accumulator. S, Z, P are modified to reflect the result of the<br>operation. CY is reset. AC is set.</p>
+<p><code>Example: ANI 86H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;XRA</strong></td>
+<td>
+<p><strong>R</strong></p>
+<p><strong>M</strong></p>
+</td>
+<td>Exclusive OR register or memory with accumulator</td>
+<td>
+<p>The contents of the accumulator are Exclusive ORed with M the
+contents of the operand (register or memory), and the result is placed
+in the accumulator. If the operand is a memory location, its address is
+specified by the contents of HL registers. S, Z, P are modified to
+reflect the result of the operation. CY and AC are reset.</p>
+<p><code>Example: XRA B or XRA M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;XRI</strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Exclusive OR immediate with accumulator</td>
+<td>
+<p>The contents of the accumulator are Exclusive ORed with the 8-bit
+data (operand) and the result is placed in the accumulator. S, Z, P are
+modified to reflect the result of the operation. CY and AC are reset.</p>
+<p><code>Example: XRI 86H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>ORA</strong></td>
+<td>
+<p><strong>R</strong></p>
+<p><strong>M</strong></p>
+</td>
+<td>Logical OR register or memory with accumulator</td>
+<td>
+<p>The contents of the accumulator are logically ORed with M the
+contents of the operand (register or memory), and the result is placed
+in the accumulator. If the operand is a memory location, its address is
+specified by the contents of HL registers. S, Z, P are modified to
+reflect the result of the operation. CY and AC are reset.</p>
+<p><code>Example: ORA B or ORA M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>ORI</strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Logical OR immediate with accumulator</td>
+<td>
+<p>The contents of the accumulator are logically ORed with the 8-bit
+data (operand) and the result is placed in the accumulator. S, Z, P are
+modified to reflect the result of the operation. CY and AC are reset.</p>
+<p><code>Example: ORI 86H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>RLC <br></strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Rotate accumulator left</td>
+<td>
+<p>Each binary bit of the accumulator is rotated left by one position.
+Bit D7 is placed in the position of D0 as well as in the Carry flag. CY
+is modified according to bit D7. S, Z, P, AC are not affected.</p>
+<p><code>Example: RLC</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>RRC</strong></td>
+<td><strong>none <br></strong></td>
+<td>Rotate accumulator right</td>
+<td>
+<p>Each binary bit of the accumulator is rotated right by one position.
+Bit D0 is placed in the position of D7 as well as in the Carry flag. CY
+is modified according to bit D0. S, Z, P, AC are not affected.</p>
+<p><code>Example: RRC</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;RAL</strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Rotate accumulator left through carry</td>
+<td>
+<p>Each binary bit of the accumulator is rotated left by one position
+through the Carry flag. Bit D7 is placed in the Carry flag, and the
+Carry flag is placed in the least significant position D0. CY is
+modified according to bit D7. S, Z, P, AC are not affected.</p>
+<p><code>Example: RAL</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;RAR</strong></td>
+<td><strong>&nbsp;</strong><strong> none</strong></td>
+<td>Rotate accumulator right through carry</td>
+<td>
+<p>Each binary bit of the accumulator is rotated right by one position
+through the Carry flag. Bit D0 is placed in the Carry flag, and the
+Carry flag is placed in the most significant position D7. CY is modified
+ according to bit D0. S, Z, P, AC are not affected.</p>
+<p><code>Example: RAR</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;CMA</strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Complement accumulator</td>
+<td>
+<p>The contents of the accumulator are complemented. No flags are affected.</p>
+<p><code>Example: CMA</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>CMC <br></strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Complement carry</td>
+<td>
+<p>The Carry flag is complemented. No other flags are affected.</p>
+<p><code>Example: CMC</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;STC</strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Set Carry</td>
+<td>
+<p>Set Carry</p>
+<p><code>Example: STC</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>BRANCHING INSTRUCTIONS</h3><hr>
+<table>
+<tbody>
+<tr>
+<td><strong>&nbsp;Opcode</strong></td>
+<td><strong>&nbsp;Operand</strong></td>
+<td><strong>Explanation of Instruction<br></strong></td>
+<td><code>&nbsp;Description</code></td>
+</tr>
+<tr>
+<td>&nbsp;<strong>JMP </strong></td>
+<td><strong>16-bit address</strong></td>
+<td>Jump unconditionally</td>
+<td>
+<p>The program sequence is transferred to the memory location specified by the 16-bit address given in the operand.</p>
+<p><code>Example: JMP 2034H or JMP XYZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>
+<table>
+<tbody>
+<tr>
+<td>Opcode</td>
+<td>Description</td>
+<td>Flag Status</td>
+</tr>
+<tr>
+<td><strong>JC</strong></td>
+<td><strong>Jump on Carry</strong></td>
+<td><strong>CY = 1</strong></td>
+</tr>
+<tr>
+<td><strong>JNC</strong></td>
+<td><strong>Jump on no Carry</strong></td>
+<td><strong>CY = 0</strong></td>
+</tr>
+<tr>
+<td><strong>JP</strong></td>
+<td><strong>Jump on positive</strong></td>
+<td><strong>S = 0</strong></td>
+</tr>
+<tr>
+<td><strong>JM</strong></td>
+<td><strong>Jump on minus</strong></td>
+<td><strong>S = 1</strong></td>
+</tr>
+<tr>
+<td><strong>JZ</strong></td>
+<td><strong>Jump on zero</strong></td>
+<td><strong>Z = 1</strong></td>
+</tr>
+<tr>
+<td><strong>JNZ</strong></td>
+<td><strong>Jump on no zero</strong></td>
+<td><strong>Z = 0</strong></td>
+</tr>
+<tr>
+<td><strong>JPE</strong></td>
+<td><strong>Jump on parity even</strong></td>
+<td><strong>P = 1</strong></td>
+</tr>
+<tr>
+<td><strong>JPO</strong></td>
+<td><strong>Jump on parity odd</strong></td>
+<td><strong>P = 0</strong></td>
+</tr>
+</tbody>
+</table>
+</strong></td>
+<td>
+<p><strong>&nbsp;16-bit address</strong></p>
+</td>
+<td>Jump conditionally</td>
+<td>
+<p>The program sequence is transferred to the memory location specified
+by the 16-bit address given in the operand based on the specified flag
+of the PSW as described below.</p>
+<p><code>Example: JZ 2034H or JZ XYZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>
+<table>
+<tbody>
+<tr>
+<td>Opcode</td>
+<td>Description</td>
+<td>Flag Status</td>
+</tr>
+<tr>
+<td><strong>CC</strong></td>
+<td><strong>Call on Carry</strong></td>
+<td><strong>CY = 1</strong></td>
+</tr>
+<tr>
+<td><strong>CNC</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on no Carry</strong></td>
+<td><strong>CY = 0</strong></td>
+</tr>
+<tr>
+<td><strong>CP</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on positive</strong></td>
+<td><strong>S = 0</strong></td>
+</tr>
+<tr>
+<td><strong>CM</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on minus</strong></td>
+<td><strong>S = 1</strong></td>
+</tr>
+<tr>
+<td><strong>CZ</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on zero</strong></td>
+<td><strong>Z = 1</strong></td>
+</tr>
+<tr>
+<td><strong>CNZ</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on no zero</strong></td>
+<td><strong>Z = 0</strong></td>
+</tr>
+<tr>
+<td><strong>CPE</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on parity even</strong></td>
+<td><strong>P = 1</strong></td>
+</tr>
+<tr>
+<td><strong>CPO</strong></td>
+<td><strong><strong>Call</strong></strong><strong> on parity odd</strong></td>
+<td><strong>P = 0</strong></td>
+</tr>
+</tbody>
+</table>
+</strong></td>
+<td><strong>&nbsp;16-bit address</strong></td>
+<td>Unconditional subroutine call</td>
+<td>
+<p>The program sequence is transferred to the memory location specified
+by the 16-bit address given in the operand. Before the transfer, the
+address of the next instruction after CALL (the contents of the program
+counter) is pushed onto the stack.</p>
+<p><code>Example: CALL 2034H or CALL XYZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;RET</strong></td>
+<td><strong>none</strong></td>
+<td>Return from subroutine unconditionally</td>
+<td>
+<p>The program sequence is transferred from the subroutine to the
+calling program. The two bytes from the top of the stack are copied into
+ the program counter,and program execution begins at the new address.</p>
+<p><code>Example: RET</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>
+<table>
+<tbody>
+<tr>
+<td>Opcode</td>
+<td>Description</td>
+<td>Flag Status</td>
+</tr>
+<tr>
+<td><strong>RC</strong></td>
+<td><strong>Return on Carry</strong></td>
+<td><strong>CY = 1</strong></td>
+</tr>
+<tr>
+<td><strong>RNC</strong></td>
+<td><strong><strong>Return</strong></strong><strong> on no Carry</strong></td>
+<td><strong>CY = 0</strong></td>
+</tr>
+<tr>
+<td><strong>RP</strong></td>
+<td><strong><strong>Return </strong></strong><strong>on positive</strong></td>
+<td><strong>S = 0</strong></td>
+</tr>
+<tr>
+<td><strong>RM</strong></td>
+<td><strong><strong>Return</strong></strong><strong> on minus</strong></td>
+<td><strong>S = 1</strong></td>
+</tr>
+<tr>
+<td><strong><strong>RZ</strong></strong></td>
+<td><strong><strong><strong>Return</strong></strong><strong> on zero</strong></strong></td>
+<td><strong>Z = 1</strong></td>
+</tr>
+<tr>
+<td><strong>RNZ</strong></td>
+<td><strong><strong><strong><strong>Return </strong></strong></strong></strong><strong>on no zero</strong></td>
+<td><strong>Z = 0</strong></td>
+</tr>
+<tr>
+<td><strong>RPE</strong></td>
+<td><strong><strong><strong><strong>Return</strong></strong></strong></strong><strong> on parity even</strong></td>
+<td><strong>P = 1</strong></td>
+</tr>
+<tr>
+<td><strong>RPO</strong></td>
+<td><strong><strong><strong><strong>Return</strong></strong></strong></strong><strong> on parity odd</strong></td>
+<td><strong>P = 0</strong></td>
+</tr>
+</tbody>
+</table>
+</strong></td>
+<td><strong>none</strong></td>
+<td>Return from subroutine conditionally</td>
+<td>
+<p>The program sequence is transferred from the subroutine to the
+calling program based on the specified flag of the PSW as described
+below. The two bytes from the top of the stack are copied into the
+program counter, and program execution begins at the new address.</p>
+<p><code>Example: RZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;PCHL</strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Load program counter with HL contents</td>
+<td>
+<p>&nbsp;The contents of registers H and L are copied into the program
+counter. The contents of H are placed as the high-order byte and the
+contents of L as the low-order byte.</p>
+<p><code>Example: PCHL</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>&nbsp;RST</strong></p>
+
+</td>
+<td><strong>0-7</strong></td>
+<td>Restart</td>
+<td>
+<p>The RST instruction is equivalent to a 1-byte call instruction to one
+ of eight memory locations depending upon the number. The instructions
+are generally used in conjunction with interrupts and inserted using
+external hardware. However these can be used as software instructions in
+ a program to transfer program execution to one of the eight locations.
+The addresses are:</p>
+<strong>
+<table>
+<tbody>
+<tr>
+<td>Instruction</td>
+<td>Restart Address</td>
+</tr>
+<tr>
+<td><strong>RST 0</strong></td>
+<td><strong>0000H</strong></td>
+</tr>
+<tr>
+<td><strong>RST1</strong></td>
+<td><strong><strong>0008H</strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 2<br></strong></td>
+<td><strong><strong>0010H</strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 3<br></strong></td>
+<td><strong><strong>0018H</strong></strong></td>
+</tr>
+<tr>
+<td><strong><strong>RST 4<br></strong></strong></td>
+<td><strong><strong><strong>0020H</strong></strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 5<br></strong></td>
+<td><strong><strong><strong><strong>0028H</strong></strong></strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 6<br></strong></td>
+<td><strong><strong><strong><strong>0030H</strong></strong></strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 7<br></strong></td>
+<td><strong><strong><strong><strong>0038H</strong></strong></strong></strong></td>
+</tr>
+</tbody>
+</table>
+</strong>
+<p>The 8085 has four additional interrupts and these interrupts generate
+ RST instructions internally and thus do not require any external
+hardware. These instructions and their Restart addresses are:</p>
+<strong>
+<table>
+<tbody>
+<tr>
+<td>Interrupt</td>
+<td>Restart Address</td>
+</tr>
+<tr>
+<td><strong>TRAP</strong></td>
+<td><strong>0024H</strong></td>
+</tr>
+<tr>
+<td><strong>RST 5.5</strong></td>
+<td><strong><strong>002CH</strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 6.5<br></strong></td>
+<td><strong><strong>0034H</strong></strong></td>
+</tr>
+<tr>
+<td><strong>RST 7.5<br></strong></td>
+<td><strong><strong>003CH</strong></strong></td>
+</tr>
+</tbody>
+</table>
+</strong>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Arithmetic Instructions</h3><hr>
+<table>
+<tbody>
+<tr>
+<td><strong>&nbsp;Opcode</strong></td>
+<td><strong>&nbsp;Operand</strong></td>
+<td><strong>Explanation of Instruction<br></strong></td>
+<td><strong>&nbsp;Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;<strong>ADD</strong></td>
+<td>
+<p>&nbsp;<strong>R</strong></p>
+<p><strong>M</strong></p></td>
+<td>Add register or memory, to accumulator</td>
+<td>
+<p>The contents of the operand (register or memory) are added to the
+contents of the accumulator and the result is stored in the accumulator.
+ If the operand is a memory location, its location is specified by the
+contents of the HL registers. All flags are modified to reflect the
+result of the addition.</p>
+<p><code>Example: ADD B or ADD M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;ADC</strong></td>
+<td>
+<p><strong>&nbsp;</strong><strong>R</strong><strong></strong></p>
+<p><strong>M</strong></p>
+</td>
+<td>Add register to accumulator with carry</td>
+<td>
+<p>The contents of the operand (register or memory) and M the Carry flag
+ are added to the contents of the accumulator and the result is stored
+in the accumulator. If the operand is a memory location, its location is
+ specified by the contents of the HL registers. All flags are modified
+to reflect the result of the addition.</p>
+<p><code>Example: ADC B or ADC M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;ADI</strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Add immediate to accumulator</td>
+<td>
+<p>The 8-bit data (operand) is added to the contents of the accumulator
+and the result is stored in the accumulator. All flags are modified to
+reflect the result of the addition.</p>
+<p><code>Example: ADI 45H</code></p><code>
+</code></td>
+</tr>
+<tr>
+<td><strong>&nbsp;ACI</strong></td>
+<td><strong>8-bit data</strong></td>
+<td>Add immediate to accumulator with carry</td>
+<td>
+<p>The 8-bit data (operand) and the Carry flag are added to the contents
+ of the accumulator and the result is stored in the accumulator. All
+flags are modified to reflect the result of the addition.</p>
+<p><code>Example: ACI 45H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;LXI</strong></td>
+<td><strong>&nbsp;Reg. pair, 16-bit data</strong></td>
+<td>Load register pair immediate</td>
+<td>
+<p>The instruction loads 16-bit data in the register pair designated in the operand.</p>
+<p><code>Example: LXI H, 2034H or LXI H, XYZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;DAD</strong></td>
+<td><strong>&nbsp;Reg. pair</strong></td>
+<td>Add register pair to H and L registers</td>
+<td>
+<p>The 16-bit contents of the specified register pair are added to the
+contents of the HL register and the sum is stored in the HL register.
+The contents of the source register pair are not altered. If the result
+is larger than 16 bits, the CY flag is set. No other flags are affected.</p>
+<p><code>Example: DAD H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>SUB</strong></td>
+<td>
+<p><strong>&nbsp;R</strong></p>
+<p><strong>M<br></strong></p>
+</td>
+<td>Subtract register or memory from accumulator</td>
+<td>
+<p>The contents of the operand (register or memory ) are subtracted from
+ the contents of the accumulator, and the result is stored in the
+accumulator. If the operand is a memory location, its location is
+specified by the contents of the HL registers. All flags are modified to
+ reflect the result of the subtraction.</p>
+<p><code>Example: SUB B or SUB M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;SBB</strong></td>
+<td><strong></strong>
+<p><strong>&nbsp;R</strong></p>
+<p><strong>M</strong></p></td>
+<td>Subtract source and borrow from accumulator</td>
+<td>
+<p>The contents of the operand (register or memory ) and M the Borrow
+flag are subtracted from the contents of the accumulator and the result
+is placed in the accumulator. If the operand is a memory location, its
+location is specified by the contents of the HL registers. All flags are
+ modified to reflect the result of the subtraction.</p>
+<p><code>Example: SBB B or SBB M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;SUI</strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Subtract immediate from accumulator</td>
+<td>
+<p>The 8-bit data (operand) is subtracted from the contents of the
+accumulator and the result is stored in the accumulator. All flags are
+modified to reflect the result of the subtraction.</p>
+<p><code>Example: SUI 45H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>SBI <br></strong></td>
+<td><strong>&nbsp;8-bit data</strong></td>
+<td>Subtract immediate from accumulator with borrow</td>
+<td>
+<p>The contents of register H are exchanged with the contents of
+register D, and the contents of register L are exchanged with the
+contents of register E.</p>
+<p><code>Example: XCHG</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;INR</strong></td>
+<td>
+<p><strong>&nbsp;R</strong></p>
+<p><strong>M</strong></p></td>
+<td>Increment register or memory by 1</td>
+<td>
+<p>The contents of the designated register or memory) are incremented by
+ 1 and the result is stored in the same place. If the operand is a
+memory location, its location is specified by the contents of the HL
+registers.</p>
+<p><code>Example: INR B or INR M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>INX</strong></td>
+<td><strong>&nbsp;R</strong></td>
+<td>Increment register pair by 1</td>
+<td>
+<p>The contents of the designated register pair are incremented by 1 and the result is stored in the same place.</p>
+<p><code>Example: INX H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;DCR</strong></td>
+<td>
+<p><strong>&nbsp;R</strong></p>
+<p><strong>M</strong></p></td>
+<td>Decrement register or memory by 1</td>
+<td>
+<p>The contents of the designated register or memory are M decremented
+by 1 and the result is stored in the same place. If the operand is a
+memory location, its location is specified by the contents of the HL
+registers.</p>
+<p><code>Example: DCR B or DCR M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>DCX</strong></td>
+<td><strong>&nbsp;R</strong></td>
+<td>Decrement register pair by 1</td>
+<td>
+<p>The contents of the designated register pair are decremented by 1 and the result is stored in the same place.</p>
+<p><code>Example: DCX H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>DAA <br></strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Decimal adjust accumulator</td>
+<td>
+<p>The contents of the accumulator are changed from a binary value to
+two 4-bit binary coded decimal (BCD) digits. This is the only
+instruction that uses the auxiliary flag to perform the binary to BCD
+conversion, and the conversion procedure is described below. S, Z, AC,
+P, CY flags are altered to reflect the results of the operation.</p>
+<p>If the value of the low-order 4-bits in the accumulator is greater
+than 9 or if AC flag is set, the instruction adds 6 to the low-order
+four bits.</p>
+<p>If the value of the high-order 4-bits in the accumulator is greater
+than 9 or if the Carry flag is set, the instruction adds 6 to the
+high-order four bits.</p>
+<p><code>Example: DAA</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Data Transfer Instructions</h3><hr>
+<table>
+<tbody>
+<tr>
+<td><strong>&nbsp;Opcode</strong></td>
+<td><strong>&nbsp;Operand</strong></td>
+<td><strong>Explanation of Instruction<br></strong></td>
+<td><strong>&nbsp;Description</strong></td>
+</tr>
+<tr>
+<td>&nbsp;<strong>MOV </strong></td>
+<td>
+<p>&nbsp;<strong>Rd, Rs</strong></p>
+<p><strong>M, Rs</strong></p>
+<p><strong>Rd, M</strong></p>
+</td>
+<td>Copy from source(Rs) to destination(Rd)</td>
+<td>
+<p>&nbsp;This instruction copies the contents of the source register
+into the destination register; the contents of the source register are
+not altered. If one of the operands is a memory location, its location
+is specified by the contents of the HL registers.</p>
+<p><code>Example: MOV B, C or MOV B, M</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;MVI</strong></td>
+<td>
+<p><strong>&nbsp;Rd, data</strong></p>
+<p><strong>M, data</strong></p>
+</td>
+<td>Move immediate 8-bit</td>
+<td>
+<p>The 8-bit data is stored in the destination register or memory. If
+the operand is a memory location, its location is specified by the
+contents of the HL registers.</p>
+<p><code>Example: MVI B, 57H or MVI M, 57H </code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;LDA</strong></td>
+<td><strong>&nbsp;16-bit address</strong></td>
+<td>Load accumulator</td>
+<td>
+<p>The contents of a memory location, specified by a 16-bit address in
+the operand, are copied to the accumulator. The contents of the source
+are not altered.</p>
+<p><code>Example: LDA 2034H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;LDAX</strong></td>
+<td><strong>&nbsp;B/D Reg. pair</strong></td>
+<td>Load accumulator indirect</td>
+<td>
+<p>The contents of the designated register pair point to a memory
+location. This instruction copies the contents of that memory location
+into the accumulator. The contents of either the register pair or the
+memory location are not altered.</p>
+<p><code>Example: LDAX B</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;LXI</strong></td>
+<td><strong>&nbsp;Reg. pair, 16-bit data</strong></td>
+<td>Load register pair immediate</td>
+<td>
+<p>The instruction loads 16-bit data in the register pair designated in the operand.</p>
+<p><code>Example: LXI H, 2034H or LXI H, XYZ</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;LHLD</strong></td>
+<td><strong>&nbsp;16-bit address</strong></td>
+<td>Load H and L registers direct</td>
+<td>
+<p>&nbsp;The instruction copies the contents of the memory location
+pointed out by the 16-bit address into register L and copies the
+contents of the next memory location into register H. The contents of
+source memory locations are not altered.</p>
+<p><code>Example: LHLD 2040H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;STA</strong></td>
+<td><strong>&nbsp;16-bit address</strong></td>
+<td>16-bit address</td>
+<td>
+<p>The contents of the accumulator are copied into the memory location
+specified by the operand. This is a 3-byte instruction, the second byte
+specifies the low-order address and the third byte specifies the
+high-order address.</p>
+<p><code>Example: STA 4350H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;STAX</strong></td>
+<td><strong>&nbsp;Reg. pair</strong></td>
+<td>Store accumulator indirect</td>
+<td>
+<p>The contents of the accumulator are copied into the memory location
+specified by the contents of the operand (register pair). The contents
+of the accumulator are not altered.</p>
+<p><code>Example: STAX B</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;SHLD</strong></td>
+<td><strong>&nbsp;16-bit address</strong></td>
+<td>Store H and L registers direct</td>
+<td>
+<p>The contents of register L are stored into the memory location
+specified by the 16-bit address in the operand and the contents of H
+register are stored into the next memory location by incrementing the
+operand. The contents of registers HL are not altered. This is a 3-byte
+instruction, the second byte specifies the low-order address and the
+third byte specifies the high-order address.</p>
+<p><code>Example: SHLD 2470H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>XCHG <br></strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Exchange H and L with D and E</td>
+<td>
+<p>The contents of register H are exchanged with the contents of
+register D, and the contents of register L are exchanged with the
+contents of register E.</p>
+<p><code>Example: XCHG</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;SPHL</strong></td>
+<td><strong>none <br></strong></td>
+<td>Copy H and L registers to the stack pointer</td>
+<td>
+<p>The instruction loads the contents of the H and L registers into<br>the
+ stack pointer register, the contents of the H register provide the
+high-order address and the contents of the L register provide the
+low-order address. The contents of the H<br>and L registers are not altered.</p>
+<p><code>Example: SPHL</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;XTHL</strong></td>
+<td><strong>&nbsp;none</strong></td>
+<td>Exchange H and L with top of stack</td>
+<td>
+<p>The contents of the L register are exchanged with the stack location
+pointed out by the contents of the stack pointer register. The contents
+of the H register are exchanged with the next stack location (SP+1);
+however, the contents of the stack pointer register are not altered.</p>
+<p><code>Example: XTHL</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;PUSH</strong></td>
+<td><strong>&nbsp;Reg. pair</strong></td>
+<td>Push register pair onto stack</td>
+<td>
+<p>The contents of the register pair designated in the operand are
+copied onto the stack in the following sequence. The stack pointer
+register is decremented and the contents of the highorder register (B,
+D, H, A) are copied into that location. The stack pointer register is
+decremented again and the contents of the low-order register (C, E, L,
+flags) are copied to that location.</p>
+<p><code>Example: PUSH B or PUSH A</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;POP</strong></td>
+<td><strong>&nbsp;Reg. pair</strong></td>
+<td>Pop off stack to register pair</td>
+<td>
+<p>The contents of the memory location pointed out by the stack pointer
+register are copied to the low-order register (C, E, L, status flags) of
+ the operand. The stack pointer is incremented by 1 and the contents of
+that memory location are copied to the high-order register (B, D, H, A)
+of the operand. The stack pointer register is again incremented by 1.</p>
+<p><code>Example: POP H or POP A</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>OUT <br></strong></td>
+<td><strong>&nbsp;8-bit port address</strong></td>
+<td>Output data from accumulator to a port with 8-bit address</td>
+<td>
+<p>&nbsp;The contents of the accumulator are copied into the I/O port specified by the operand.</p>
+<p><code>Example: OUT F8H</code></p>
+</td>
+</tr>
+<tr>
+<td><strong>&nbsp;IN</strong></td>
+<td><strong>&nbsp;8-bit port address</strong></td>
+<td>Input data to accumulator from a port with 8-bit address</td>
+<td>
+<p>The contents of the input port designated in the operand are read and loaded into the accumulator.</p>
+<p><code>Example: IN 8CH</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br><hr><br>
+</div>
+</div></div></div>
+    </div>
+
+    <div>
+      <div class="reader-message"></div>
+    </div>
+    <div aria-owns="toolbar"></div>
+  </div>
+
+
+
+</body></html>

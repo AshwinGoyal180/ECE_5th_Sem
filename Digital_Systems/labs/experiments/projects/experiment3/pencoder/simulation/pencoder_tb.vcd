@@ -1,0 +1,61 @@
+$date
+  Mon Oct 12 19:55:28 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module pencoder_tb $end
+$var reg 4 ! i[3:0] $end
+$var reg 1 " a0 $end
+$var reg 1 # a1 $end
+$var reg 1 $ v $end
+$scope module uut $end
+$var reg 4 % i[3:0] $end
+$var reg 1 & a0 $end
+$var reg 1 ' a1 $end
+$var reg 1 ( v $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+0"
+0#
+0$
+b0000 %
+0&
+0'
+0(
+#10000000
+b0001 !
+1$
+b0001 %
+1(
+#20000000
+b0010 !
+1"
+b0010 %
+1&
+#30000000
+b0011 !
+b0011 %
+#40000000
+b0111 !
+0"
+1#
+b0111 %
+0&
+1'
+#50000000
+b1111 !
+1"
+b1111 %
+1&
+#60000000

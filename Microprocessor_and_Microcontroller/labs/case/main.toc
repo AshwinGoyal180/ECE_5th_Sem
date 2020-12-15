@@ -1,0 +1,19 @@
+\babel@toc {british}{}
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}1971-1981: 4004 (8-bit)}{1}{section.2}%
+\contentsline {section}{\numberline {3}1978-1982: iAPX 86 -- 8086, 8088 and 80186 (16-bit)}{2}{section.3}%
+\contentsline {section}{\numberline {4}1995: Pentium Pro (P6, i686)}{2}{section.4}%
+\contentsline {section}{\numberline {5}1997: Pentium II and Pentium II Xeon}{2}{section.5}%
+\contentsline {section}{\numberline {6}1998: Celeron}{3}{section.6}%
+\contentsline {section}{\numberline {7}2000: Pentium 4}{3}{section.7}%
+\contentsline {section}{\numberline {8}2001: Xeon}{4}{section.8}%
+\contentsline {section}{\numberline {9}2001: Itanium}{4}{section.9}%
+\contentsline {section}{\numberline {10}2003: Pentium M}{4}{section.10}%
+\contentsline {section}{\numberline {11}2006: Core 2 Duo}{5}{section.11}%
+\contentsline {section}{\numberline {12}2008: Core i-Series}{5}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Intel Core First Generation - Nehalem}{5}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Intel Core i7 -Sandy Bridge}{6}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Intel Core i7 - Ivy Bridge}{6}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Intel Core i7 - Haswell}{6}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Intel Core i7 - Broadwell}{6}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Intel Core i7 - Sky lake}{6}{subsection.12.6}%

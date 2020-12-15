@@ -1,0 +1,7 @@
+v 4
+file . "testbench/sub_tb.vhdl" "8624ca691409c91f56ade91a342b4ab995ef4eba" "20200808153033.665":
+  entity sub_tb at 1( 0) + 0 on 21;
+  architecture adder of sub_tb at 7( 74) + 0 on 22;
+file . "src/subtractor.vhdl" "4e5a946cd01e2dec7a8cd6af759764690d8ff094" "20200808153033.621":
+  entity full_subtractor at 1( 0) + 0 on 19;
+  architecture sub of full_subtractor at 13( 228) + 0 on 20;

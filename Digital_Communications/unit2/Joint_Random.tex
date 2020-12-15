@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{hyperref}
+\begin{document}
+\section{Joint Random Variables}
+
+PDF/CDF in 2 RVs
+
+\begin{itemize}
+\item
+  Joint Probability \[
+  P(A, B) = \textrm{Probability of occurances of A and B where they
+  may be dependent or independent}
+  \]
+\item
+  Conditional Probability \[
+  P(A|B) = \textrm{Probability of A given that B occurs}
+  \]
+\end{itemize}
+
+\[
+P(B|A) = \textrm{Probability of B given that A occurs}
+\]
+
+\begin{itemize}
+\item
+  Baye's Theorem \[
+  P(A, B) = P(A|B)P(B) = P(B|A)P(A) = P(B, A)
+  \]
+\end{itemize}
+
+\subsection{Statistical Independence}
+
+\[
+P(A, B) = P(A)P(B)
+\]
+
+\[
+P(A|B) = P(A)
+\]
+
+\[
+P(B|A) = P(B)
+\]
+
+\subsection{Joint Random Variables}
+
+\[
+f_{X, Y}(x, y) \qquad F_{X, Y}(x, y)
+\]
+
+\subsection{Conditional RVs}
+
+\[
+f_{X|Y}(x), f_{Y|X}(y)
+\]
+
+\[
+f_{X, Y}(x, y) = f_{X|Y}(x)f_Y(y) = f_{Y|X}f_X(x)
+\]
+
+\subsection{Statistical Independence}
+
+\[
+f_{X, Y}(x, y) = f_X(x)f_y(y)
+\]
+
+\subsection{PDF Properties}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(f_{X, Y}(x, y) \geq 0\)
+\item
+  \(\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X, Y}(x, y) dx dy = 1\)
+\item
+  \(Pr(x_1 \leq x \leq x_2, y_1 \leq y \leq y_2) = \int_{x_1}^{x_2} \int_{y_1}^{y_2} f_{X, Y}(x, y) dx dy\)
+\item
+  \(F_{X, Y}(x, y) = \int_{x}^{\infty} \int_{y}^{\infty} f_{X, Y}(x\prime, y\prime) dx\prime dy\prime\)
+\item
+  \(f_X(x) = \int_{-\infty}^{\infty}f_{X, Y}(x, y)dy; \quad f_X(x) = \int_{-\infty}^{\infty}f_{X, Y}(x, y)dy\)
+\end{enumerate}
+
+\subsection{CDF Properties}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(0 \leq F_{X, Y}(x,y) \leq 1\)
+\item
+  \(F_{X, Y}(-\infty, y) = F_{X, Y}(x, -\infty) = F_{X, Y}(-\infty, -\infty) = 0\)
+\item
+  \(F_{\infty, Y} = F_Y(y); \quad F_{X, Y}(x, \infty) = F_X(x)\)
+\item
+  \(F_{X, Y}(\infty, \infty) = 1\)
+\end{enumerate}
+
+\subsection{Moments}
+
+\[
+E\{g(x)\} = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x) f_{X, Y}(x, y) dxdy
+\]
+
+\[
+g(y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(y) f_{X, Y}(x, y) dxdy
+\]
+
+\[
+E\{g(x, y)\} = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x ,y) f_{X, Y}(x, y) dxdy
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Correlation \[
+  g(x, y) = xy
+  \]
+\end{enumerate}
+
+\[
+E\{XY\} = \int_{-\infty}^{\infty} \int_{\infty}^{\infty} xy f_{X, Y} dx dy
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Covariance
+\end{enumerate}
+
+\[
+g(x, y) = (x - m_x)(y - m_y)
+\]
+
+\[
+\sigma\{XY\} = \int_{-\infty}{\infty} \int_{\infty}^{\infty} xy f_{X, Y} dx dy
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  Special Case: Statistical Independence
+\end{enumerate}
+
+\[
+f_{X, Y}(x, y) = f_X(x)f_Y(y)
+\]
+
+\end{document}

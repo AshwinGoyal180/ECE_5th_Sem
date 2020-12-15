@@ -1,0 +1,60 @@
+$date
+  Sat Aug  8 19:40:36 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module half_tb $end
+$var reg 2 ! input[1:0] $end
+$var reg 2 " output[1:0] $end
+$scope module uut $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % d $end
+$var reg 1 & bo $end
+$var reg 1 ' w_wire_1 $end
+$var reg 1 ( w_wire_2 $end
+$var reg 1 ) w_wire_3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00 !
+b00 "
+0#
+0$
+0%
+0&
+1'
+0(
+0)
+#10000000
+b01 !
+b11 "
+1$
+1%
+1&
+0'
+1(
+#20000000
+b10 !
+b01 "
+1#
+0$
+0&
+0(
+1)
+#30000000
+b11 !
+b00 "
+1$
+0%
+0)
+#40000000

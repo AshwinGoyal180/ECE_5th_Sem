@@ -1,0 +1,57 @@
+$date
+  Sun Aug 23 15:08:00 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module or_tb $end
+$var reg 2 ! input[1:0] $end
+$var reg 1 " y $end
+$scope module uut $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % y $end
+$scope module mux1 $end
+$var reg 1 & i0 $end
+$var reg 1 ' i1 $end
+$var reg 1 ( s1 $end
+$var reg 1 ) y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00 !
+0"
+0#
+0$
+0%
+0&
+1'
+0(
+0)
+#10000000
+b01 !
+1"
+1$
+1%
+1&
+1)
+#20000000
+b10 !
+1#
+0$
+0&
+1(
+#30000000
+b11 !
+1$
+1&
+#40000000

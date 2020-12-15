@@ -1,0 +1,7 @@
+v 4
+file . "testbench/half_tb.vhdl" "18b7e82cf0857e02ce3e934c2609279ff96780fd" "20200808071509.972":
+  entity half_tb at 2( 1) + 0 on 35;
+  architecture behavior of half_tb at 8( 77) + 0 on 36;
+file . "src/half_adder.vhdl" "0ad4ddcd279616cf84b4e747ed35d32586b5c3aa" "20200808071509.945":
+  entity half_adder at 1( 0) + 0 on 33;
+  architecture behavioral of half_adder at 12( 195) + 0 on 34;

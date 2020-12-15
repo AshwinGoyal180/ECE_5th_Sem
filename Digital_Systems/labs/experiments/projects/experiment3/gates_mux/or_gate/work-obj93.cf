@@ -1,0 +1,9 @@
+v 4
+file . "testbench/or_tb.vhdl" "be647b97ebbdc0b6683a6ff0dbb6f246e3d2ac0f" "20200823093800.654":
+  entity or_tb at 1( 0) + 0 on 29;
+  architecture tb of or_tb at 7( 73) + 0 on 30;
+file . "src/or_gate.vhdl" "686d8c3c118663972db95feebaad196d9f417cb2" "20200823093800.617":
+  entity orgate at 1( 0) + 0 on 25;
+  architecture sms of orgate at 11( 133) + 0 on 26;
+  entity mux at 25( 339) + 0 on 27;
+  architecture orgate_arch of mux at 35( 485) + 0 on 28;

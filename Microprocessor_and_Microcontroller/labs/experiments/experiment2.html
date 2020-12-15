@@ -1,0 +1,768 @@
+<!DOCTYPE html><html><head>
+      <title>Experiment 2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/ashwin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.12/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      <script type="text/javascript" src="file:////home/ashwin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.12/node_modules/@shd101wyy/mume/dependencies/mermaid/mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      
+      <script type="text/javascript" src="file:////home/ashwin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.12/node_modules/@shd101wyy/mume/dependencies/raphael/raphael.js" charset="UTF-8"></script><script type="text/javascript" src="file:////home/ashwin/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.12/node_modules/@shd101wyy/mume/dependencies/flowchart/flowchart.min.js" charset="UTF-8"></script>
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><strong>AIM:</strong> Addition of two 8 bit numbers and</p>
+<ol>
+<li>
+<p>Sum is also 8 bit number</p>
+</li>
+<li>
+<p>Sum is 16 bit number</p>
+</li>
+</ol>
+<p><strong>[SOFTWARE USED] :</strong> GNUSim 8085</p>
+<p><strong>[THEORY]:</strong></p>
+<p>The Intel 8085 is an 8-bit microprocessor produced by Intel and
+introduced in March 1976. It is a software-binary compatible with the
+more-famous Intel 8080 with only two minor instructions added to support
+its added interrupt and serial input/output features.</p>
+<p><strong>INSTRUCTIONS IN 8085:</strong></p>
+<p>An instruction of a computer is a command given to the computer to
+perform a specified operation on given data. In microprocessor, the
+instruction set is the collection of the instructions that the
+microprocessor is designed to execute.</p>
+<p>The programmer writes a program in assembly language using these
+instructions. These instructions have been classified into the following
+groups:</p>
+<ol>
+<li>
+<p><strong>Data Transfer Group</strong></p>
+</li>
+<li>
+<p><strong>Arithmetic Group</strong></p>
+</li>
+<li>
+<p><strong>Logical Group</strong></p>
+</li>
+<li>
+<p><strong>Branch Control Group</strong></p>
+</li>
+<li>
+<p><strong>I/O and Machine Control Group</strong></p>
+</li>
+</ol>
+<p>These are briefly explained below</p>
+<ol>
+<li><strong>Data Transfer Group</strong></li>
+</ol>
+<p>Instructions, which are used to transfer data from one register to
+another register, from memory to register or register to memory, come
+under this group. Examples are: MOV, MVI, LXI, LDA, STA etc. When an
+instruction of data transfer group is executed, data is transferred from
+the source to the destination without altering the contents of the
+source</p>
+<ol start="2">
+<li><strong>Arithmetic Group</strong></li>
+</ol>
+<p>The instructions of this group perform arithmetic operations such as
+addition, subtraction; increment or decrement of the content of a
+register or memory. Examples are: ADD, SUB, INR, DAD etc**.**</p>
+<ol start="3">
+<li><strong>Logical Group</strong></li>
+</ol>
+<p>The Instructions under this group perform logical operation such as AND,
+OR, compare, rotate etc. Examples are: ANA, XRA, ORA, CMP, and RAL etc.</p>
+<ol start="4">
+<li><strong>Branch Control Group</strong></li>
+</ol>
+<p>This group includes the instructions for conditional and unconditional
+jump, subroutine call and return, and restart. Examples are: JMP, JC,
+JZ, CALL, CZ, RST etc.</p>
+<ol start="5">
+<li><strong>I/O and Machine Control Group</strong></li>
+</ol>
+<p>This group includes the instructions for input/output ports, stack and
+machine</p>
+<p>control. Examples are: IN, OUT, PUSH, POP, and HLT etc</p>
+<p><strong>[ALGORITHM]</strong></p>
+<p>a) [Sum is 8 bit]</p>
+<ul>
+<li>
+<p>Get address of first number in H-L pair</p>
+</li>
+<li>
+<p>First number in accumulator</p>
+</li>
+<li>
+<p>Increment content of H-L pair</p>
+</li>
+<li>
+<p>Add first and second number</p>
+</li>
+<li>
+<p>Store sum in 2503 H</p>
+</li>
+<li>
+<p>Stop</p>
+</li>
+</ul>
+<p>b) [Sum is 16 bit]</p>
+<ul>
+<li>
+<p>Address of first number in H-L pair</p>
+</li>
+<li>
+<p>MSBs of sum in in register C. Initial value=00</p>
+</li>
+<li>
+<p>First number in accumulator</p>
+</li>
+<li>
+<p>Address of Second number in H-L pair</p>
+</li>
+<li>
+<p>Add the two numbers</p>
+</li>
+<li>
+<p>Is carry? If no, go to label AHEAD</p>
+</li>
+<li>
+<p>If yes, increment C</p>
+</li>
+<li>
+<p>LSB of sum in 2503 H</p>
+</li>
+<li>
+<p>MSB of sum in accumulator</p>
+</li>
+<li>
+<p>MSB of sum in 2504 H</p>
+</li>
+<li>
+<p>Stop</p>
+</li>
+</ul>
+<p><strong>[FLOW CHART]:</strong></p>
+<p>a) Sum is 8 bit</p>
+<div class="mermaid">graph TB
+st([Start]) --&gt; op1[Load H-L pair with first operands memory address]
+
+op1 --&gt; op2[Move the first operand from memory to accumulator]
+op2 --&gt; op3[Increament H-L pair to point next memory location]
+op3 --&gt; op4[Add with A]
+op4 --&gt; op5[Increment H-L pair]
+op5 --&gt; op6[Move the result from accumulator to memory]
+op6 --&gt; Stop
+</div><p>b) [Sum is 16 bit]</p>
+<div class="mermaid">graph TB
+st[Start]--&gt;op1[Load H-L pair with first operands memory address]
+op1 --&gt; op2[move the first operand from memory to accumulator]
+op2 --&gt; op3[Increament H-L pair to point next memory location]
+op3 --&gt; op4[Initialize register  C = 00]
+op4 --&gt;op5[Add M with A]
+op5 --&gt; cond{If Carry ?}
+cond --&gt;|yes|op6[Increment register C]
+op6 --&gt;op7[Increment H-L pairt]
+op7 --&gt;op8[Move the result to memory]
+op8 --&gt;op9[Increment H-L pair and move carry from register C to memory]
+op9 --&gt; Stop
+
+cond --&gt;|no|op7
+</div><hr>
+<div class="flow">st=&gt;start: Start
+e=&gt;end: Stop
+op1=&gt;operation: Load H-L pair with first operands memory address
+op2=&gt;operation: move the first operand from memory to accumulator
+op3=&gt;operation: Increament H-L pair to point next memory location
+op4=&gt;operation: Add with A
+op5=&gt;operation: Increment H-L pair
+op6=&gt;operation: Move the result from accumulator to memory
+
+st-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;op5-&gt;op6-&gt;e
+</div><p>b) [Sum is 16 bit]</p>
+<div class="flow">st=&gt;start: Start
+e=&gt;end: Stop
+op1=&gt;operation: Load H-L pair with first operands memory address
+op2=&gt;operation: move the first operand from memory to accumulator
+op3=&gt;operation: Increament H-L pair to point next memory location
+op4=&gt;operation: Initialize register  C = 00
+op5=&gt;operation: Add M with A
+cond=&gt;condition: if carry ?
+op6=&gt;operation: Increment register C
+op7=&gt;operation: Increment H-L pairt
+op8=&gt;operation: Move the result to memory
+op9=&gt;operation: Increment H-L pair and move carry from register C to memory
+
+
+st-&gt;op1-&gt;op2-&gt;op3-&gt;op4-&gt;op5-&gt;cond
+cond(yes)-&gt;op6-&gt;op7-&gt;op8-&gt;op9-&gt;e
+cond(no)-
+
+op6[Increment register C]
+op7[Increment H-L pairt]
+op8[Move the result to memory]
+op9[Increment H-L pair and move carry from register C to memory]
+
+</div><p><strong>[PROGRAM AND OUTPUT]:</strong></p>
+<p>a) [Sum is 8 bit]</p>
+<table>
+<thead>
+<tr>
+<th>Add</th>
+<th>Mnemo</th>
+<th>Op</th>
+<th>Comments</th>
+<th>Addressing Mode</th>
+<th>Machine Cycle</th>
+<th>T-States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2000</td>
+<td>LXI H</td>
+<td>2501H</td>
+<td>Load H-L pairs with address 2501H</td>
+<td>Immediate</td>
+<td>Opcode fetch + 2 Memory read</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2003</td>
+<td colspan="2">MOV A, M</td>
+
+<td>Move first operand from memory to accumulator</td>
+<td>Indirect</td>
+<td>Opcode fetch + Memory read</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2004</td>
+<td colspan="2">INX H</td>
+
+<td>Increment H-L pair</td>
+<td>Register</td>
+<td>Opcode fetch</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2005</td>
+<td colspan="2">ADD M</td>
+
+<td>Add M with A</td>
+<td>Register</td>
+<td>Opcode fetch + Memory read</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2006</td>
+<td colspan="2">INX H</td>
+
+<td>Increment H-L pair</td>
+<td>Register</td>
+<td>Opcode fetch</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2007</td>
+<td colspan="2">MOV M, A</td>
+
+<td>Move contents of Accumulator to memory add sotred in H-L Pair</td>
+<td>Indirect</td>
+<td>Opcode fetch + memory write</td>
+<td>7</td>
+</tr>
+<tr>
+<td>2008</td>
+<td colspan="2">HLT</td>
+
+<td>HALT</td>
+<td>-</td>
+<td>Opcode fetch</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><img src="media/image1.jpg" alt>{width=&quot;6.35in&quot; height=&quot;3.8772725284339455in&quot;}</p>
+<p><strong>[Output:]</strong></p>
+<p>[Data]:</p>
+<p>2501- 04 H</p>
+<p>2502- 02 H</p>
+<p>[Result]:</p>
+<p>2503- 06 H</p>
+<p>\pagebreak</p>
+<p>b) [Sum is 16 bit]</p>
+<table>
+<thead>
+<tr>
+<th>Add</th>
+<th>Mn</th>
+<th>Op</th>
+<th>Comments</th>
+<th>Addressing Mode</th>
+<th>Machine Cycle</th>
+<th>T-States</th>
+<th>Lable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2000</td>
+<td>LXI H</td>
+<td>2501 H</td>
+<td>Load H-L pair with Address 300H</td>
+<td>Immediate</td>
+<td>Opcode fetch and 2 memory read</td>
+<td colspan="2">10</td>
+
+</tr>
+<tr>
+<td>2003</td>
+<td>MVI C</td>
+<td>00</td>
+<td>Initialize C register with zero value</td>
+<td>Immediate</td>
+<td>Opcode fetch + memory read</td>
+<td colspan="2">7</td>
+
+</tr>
+<tr>
+<td>2005</td>
+<td colspan="2">MOV A, M</td>
+
+<td>Move first operand form memory to A</td>
+<td>Indirect</td>
+<td>Opcode fetch + memory read</td>
+<td colspan="2">7</td>
+
+</tr>
+<tr>
+<td>2006</td>
+<td colspan="2">INX H</td>
+
+<td>Increment H-L Pair</td>
+<td>Register</td>
+<td>Opcode fetch</td>
+<td colspan="2">6</td>
+
+</tr>
+<tr>
+<td>2007</td>
+<td colspan="2">ADD M</td>
+
+<td>Add M with A</td>
+<td>Indirect</td>
+<td>Opcode fetch + memory read</td>
+<td colspan="2">7</td>
+
+</tr>
+<tr>
+<td>2008</td>
+<td>JNC</td>
+<td>AHEAD</td>
+<td>Jump to label if no carry</td>
+<td>Immediate</td>
+<td>Opcode fetch + 2 memory read</td>
+<td colspan="2">10</td>
+
+</tr>
+<tr>
+<td>2008</td>
+<td>INR</td>
+<td>C</td>
+<td>Increment reg C</td>
+<td>Register</td>
+<td>Opcode fetch</td>
+<td colspan="2">4</td>
+
+</tr>
+<tr>
+<td>2000</td>
+<td>STA</td>
+<td>2503H</td>
+<td>Load data of accumulator to memory</td>
+<td>Direct</td>
+<td>Opcode fetch + 2 memory read + 2 memory write</td>
+<td>13</td>
+<td>AHEAD</td>
+</tr>
+<tr>
+<td>200F</td>
+<td colspan="2">MOV A, C</td>
+
+<td>Move content of C register to accumulator</td>
+<td>Register</td>
+<td>Opcode fetch</td>
+<td colspan="2">4</td>
+
+</tr>
+<tr>
+<td>2010</td>
+<td>STA</td>
+<td>2504H</td>
+<td>Load data of accumulator to memory</td>
+<td>Direct</td>
+<td>Opcode fetch + 2 memory read + 2 memory write</td>
+<td colspan="2">13</td>
+
+</tr>
+<tr>
+<td>2013</td>
+<td colspan="2">HLT</td>
+
+<td>HALT</td>
+<td>-</td>
+<td>Opcode</td>
+<td colspan="2">4</td>
+
+</tr>
+</tbody>
+</table>
+<p><img src="media/image4.jpg" alt>{width=&quot;6.5in&quot; height=&quot;3.8472222222222223in&quot;}</p>
+<p><strong>[Output:]</strong></p>
+<p>[Data]:</p>
+<p>2501- 98 H</p>
+<p>2502- 9A H</p>
+<p>[Result]:</p>
+<p>2503- 32 H, LSBs of sum</p>
+<p>2504- 01 H, MSBs of sum</p>
+<p><strong>[RESULT]:</strong> The sum of two 8 bit numbers in 8085 is
+obtained for both the cases when</p>
+<p>a) Sum of the numbers is 8 bit</p>
+<p>b) Sum of the numbers is 16 bit.</p>
+<hr>
+<pre class="language-text">Centered   Default           Right Left
+ Header    Aligned         Aligned Aligned
+</pre>
+<hr>
+<pre class="language-text">  First    row                12.0 Example of a row that
+                                   spans multiple lines.
+
+ Second    row                 5.0 Here&apos;s another one. Note
+                                   the blank line between
+                                   rows.
+</pre>
+<hr>
+
+      </div>
+      <div class="md-sidebar-toc"></div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "dark"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    <script>
+var flowcharts = document.getElementsByClassName('flow')
+for (var i = 0; i < flowcharts.length; i++) {
+  var flow = flowcharts[i]
+  try {
+    var diagram = flowchart.parse(flow.textContent)
+    flow.id = 'flow_' + i
+    flow.innerHTML = ''
+    diagram.drawSVG(flow.id)
+  } catch (error) {
+    flow.innerHTML = '<pre class="language-text">' + error.toString() + '</pre>'
+  }
+}
+</script>
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

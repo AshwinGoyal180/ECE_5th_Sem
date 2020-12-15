@@ -1,0 +1,11 @@
+v 4
+file . "testbench/adder_tb.vhdl" "cadff88c740849e4205242c710fbcbac409f1078" "20200919164733.426":
+  entity adder_tb at 1( 0) + 0 on 31;
+  architecture behavior of adder_tb at 7( 78) + 0 on 32;
+file . "src/fulladder.vhdl" "d7d105816822e7ed98c5ecd32d381681267ea58f" "20200919164733.387":
+  entity fulladder at 1( 0) + 0 on 25;
+  architecture smsb of fulladder at 14( 176) + 0 on 26;
+  entity half_adder at 36( 586) + 0 on 27;
+  architecture halfadder of half_adder at 42( 719) + 0 on 28;
+  entity orgate at 48( 820) + 0 on 29;
+  architecture sms of orgate at 56( 937) + 0 on 30;

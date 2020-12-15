@@ -1,0 +1,7 @@
+v 4
+file . "testbench/tb_bin.vhdl" "4a19a6f3d34fe5fc09c8b95adfebe3748fddf47b" "20200920084911.155":
+  entity tb_bin at 1( 0) + 0 on 57;
+  architecture behav of tb_bin at 7( 74) + 0 on 58;
+file . "src/gray2bin_behav.vhdl" "df34ed65e0bcecc63a33aea9184a85c667cee215" "20200920084911.133":
+  entity gray2bin_behav at 1( 0) + 0 on 55;
+  architecture arch_gray2bin_behav of gray2bin_behav at 9( 166) + 0 on 56;
