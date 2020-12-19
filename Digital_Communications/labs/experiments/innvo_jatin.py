@@ -4,9 +4,9 @@ pkg load communications
 % A Digital communication device needs to transmit a sinusoidal wave of 3V
 % amplitude and 4kHz frequency sampled with an impulse train of 40kHz. For
 % reliable communication, it is required that the signal to noise ratio must
-% at least be 30db. The analog to digital conversion method decided is Pulse
-% Code modulation. Further, the transmission requires FSK modulation scheme
-% with carrier frequency 400.0kHz and 600.0kHz. Assuming the presence of 25dB
+% at least be 40db. The analog to digital conversion method decided is
+% Delta modulation. Further, the transmission requires FSK modulation scheme
+% with carrier frequency 840.0kHz and 1120.0kHz. Assuming the presence of 25dB
 % AWGN, we decide to use the correlation receiver in conjunction with maximum
 % likelihood detection criteria for digital data reception. Finally, the
 % received bit sequence decoded and with the use of an LPF, we obtain the
@@ -30,31 +30,32 @@ s = A*cos(2*pi*fm*t_s);
 figure(2);
 stem(t_s,s);
 % c) Quantized message signal (1 point)
-SNR=30;
-n=ceil((SNR-1.8)/6.02);
-L=2^n;
-vmax = max(s);
-vmin = min(s);
-del = (vmax-vmin)/L;
-part=vmin+del:del:vmax-del;
-code=vmin+del/2:del:vmax-del/2;
-[ind,q]=quantiz(s,part,code);
-figure(3);
-stairs(t_s,q);
-% d) Encoded bit stream signal (1 point)
-enc=de2bi(ind, n, 'left-msb');
-k=1;
-coded=zeros(1,length(ind)*n);
-for i=1:length(ind)
-    coded(k:k+n-1)=enc(i,:);
-    k=k+n;
+SNR=25;
+n = 1;
+l = length(m);
+delta = (A/2)*(3/(10^(SNR/10)))^0.5;
+xn = 0;
+for i=1:l
+    if m(i)>=xn(i)
+        d(i) = 1;
+        xn(i+1) = xn(i) + delta;
+    else
+        d(i) = 0;
+        xn(i+1) = xn(i) - delta;
+    end
 end
-figure(4);
-stairs(0:1/(n*fs):2/fm - 1/(n*fs),coded);
+
+%figure(3);
+%stairs(t_s,xn(1:l));
+
+% d) Encoded bit stream signal (1 point)
+figure(3);
+stairs(t_s,d);
 ylim([-0.2,1.2]);
-% e) FSK modulated signal for first 20 bits(1 pointj
-f1=6e5;
-f0=4e5;
+
+% e) FSK modulated signal for first 20 bits(1 point)
+f1 = 11.2e5;
+f0 = 8.4e5;
 x=coded(1:20);
 t_m=0:1/(20*f1):length(x)/(n*fs) - 1/(20*f1);
 s0=sin(2*pi*f0*t_m);
@@ -119,6 +120,3 @@ SNR_O=10^(0.1*(6.02*n+1.8-N0));
 Eb_No=SNR_O*f1/(n*fs);
 Pe=qfunc(sqrt(Eb_No));
 fprintf('Probability of error: %f\n',Pe);
-
-
-pause

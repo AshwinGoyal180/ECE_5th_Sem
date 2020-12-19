@@ -1,0 +1,150 @@
+$date
+  Sat Dec 19 13:07:52 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module viterbi_decoder_tb $end
+$var reg 2 ! s_parityin[1:0] $end
+$var reg 7 " s_output[6:0] $end
+$var reg 1 # s_output_valid $end
+$var reg 1 $ s_reset $end
+$var reg 1 % s_clock $end
+$scope module unitundertest7 $end
+$var reg 2 & parityin[1:0] $end
+$var reg 7 ' output[0:6] $end
+$var reg 1 ( output_valid $end
+$var reg 1 ) reset $end
+$var reg 1 * clock $end
+$comment starting_state is not handled $end
+$comment path_metric is not handled $end
+$var integer 32 + sig_min_path_idx $end
+$comment sig_input_buffer is not handled $end
+$comment path_out is not handled $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00 !
+b0000000 "
+0#
+1$
+0%
+b00 &
+b0000000 '
+0(
+1)
+0*
+b10000000 +
+#10000000
+0$
+0)
+#15000000
+b11 !
+b11 &
+#20000000
+1%
+1*
+#40000000
+0%
+0*
+#55000000
+#60000000
+1%
+1*
+#80000000
+0%
+0*
+#95000000
+b01 !
+b01 &
+#100000000
+1%
+1*
+#120000000
+0%
+0*
+#135000000
+b11 !
+b11 &
+#140000000
+1%
+1*
+#160000000
+0%
+0*
+#175000000
+b01 !
+b01 &
+#180000000
+1%
+1*
+#200000000
+0%
+0*
+#215000000
+#220000000
+1%
+1*
+#240000000
+0%
+0*
+#255000000
+b11 !
+b11 &
+#260000000
+1%
+1*
+#280000000
+0%
+0*
+#295000000
+#300000000
+1%
+1*
+b0 +
+#320000000
+0%
+0*
+#340000000
+b1011000 "
+1#
+1%
+b1011000 '
+1(
+1*
+b1011000 +
+#360000000
+0%
+0*
+#380000000
+1%
+1*
+#400000000
+0%
+0*
+#420000000
+1%
+1*
+#440000000
+0%
+0*
+#460000000
+1%
+1*
+#480000000
+0%
+0*
+#495000000
+#500000000
+1%
+1*

@@ -13,7 +13,7 @@ t = 0:1/100:1;			      % n1 number of samples to be selected
 x = a*sin(2*pi*t);
 
 l = length(x)
-delta = input('Required Step Size: ');
+delta = pi/25;
 
 %Variation of this step size results in the problems of delta modulation like granulat noise and slope overloading
 % leading to improper reconstruciton
@@ -38,6 +38,8 @@ grid on;
 title('Staircase Approximation');
 xlabel('Time --->');
 ylabel('Amplitude --->');
+hold on;
+plot(t, x);
 
 subplot(2, 1, 2);
 stairs(t, d);

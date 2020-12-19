@@ -1,0 +1,37 @@
+```asm
+INCLUDE "emu8086.inc"
+
+MOV 1300H, 31H
+MOV 1301H, 32H
+MOV 1302H, 32H
+MOV 1303H, 31H
+MOV 1304H, 33H
+MOV 1305H, 35H
+MOV 1306H, 36H
+MOV 1307H, 32H
+
+
+
+MOV     SI, 1300H
+MOV     DI, 1308H
+MOV     DL, 34H
+MOV     CX, 0008H
+MOV     BL, 00H
+
+Product:    MOV     AL, [SI]
+
+AND     AL, 0FH
+AND     DL, 0FH
+MUL     DL
+
+AAM
+ADD     AL, BL
+AAA
+MOV     [DI], AL
+INC     DI
+MOV     BL, AH
+INC     SI
+
+LOOP    Product
+hlt
+```
