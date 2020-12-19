@@ -5,12 +5,6 @@ geometry:
     - right=1cm
     - bottom=1cm
 documentclass: article
-title:
-- Viterbi Decoder
-author:
-	- Ashwin Goyal
-date:
-- \today
 header-includes:
     - \usepackage{graphicx}
     - \usepackage{multicol}
@@ -34,6 +28,13 @@ pagestyle:
 \pagenumbering{gobble}
 
 
+\title{Viterbi Decoder}
+\author{Digital System Design, Dept of Electronics and Communications \\
+Ashwin Goayl, 01711502818\\
+ECE -1}
+
+\date{\today}
+\maketitle
 
 \begin{abstract}
 Communication system transmits data from source to transmitter through a channel
