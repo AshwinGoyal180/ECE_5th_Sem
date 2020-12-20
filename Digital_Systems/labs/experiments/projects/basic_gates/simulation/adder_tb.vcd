@@ -1,5 +1,5 @@
 $date
-  Thu Dec 17 14:41:23 2020
+  Sat Dec 19 22:47:48 2020
 $end
 $version
   GHDL v0
@@ -12,52 +12,24 @@ $upscope $end
 $scope module std_logic_1164 $end
 $upscope $end
 $scope module adder_tb $end
-$var reg 3 ! input[2:0] $end
-$var reg 1 " output $end
+$var reg 1 ! input $end
+$var reg 1 " clock $end
 $scope module uut $end
-$var reg 1 # a $end
-$var reg 1 $ b $end
-$var reg 1 % c $end
-$var reg 1 & co $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
-b000 !
-0"
-0#
-0$
-0%
-0&
+0!
+U"
 #10000000
-b001 !
-1#
+1!
 #20000000
-b010 !
-0#
-1$
 #30000000
-b011 !
-1"
-1#
-1&
 #40000000
-b100 !
-0#
-0$
-1%
+0!
 #50000000
-b101 !
-0"
-1#
-0&
+1!
 #60000000
-b110 !
-1"
-0#
-1$
-1&
 #70000000
-b111 !
-1#
+0!
 #80000000

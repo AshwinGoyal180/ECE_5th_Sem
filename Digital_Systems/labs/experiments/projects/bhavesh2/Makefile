@@ -2,7 +2,7 @@ FILES = src/*
 VHDLEX = .vhdl
 
 # testbench
-TESTBENCH=Testbench
+TESTBENCH=lsfr_test
 TESTBENCHPATH = testbench/${TESTBENCH}$(VHDLEX)
 
 #GHDL CONFIG
